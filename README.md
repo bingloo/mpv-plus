@@ -3,12 +3,12 @@
 ## 说明
 
 * 集合常用的功能，不需要复杂的配置，开箱即用。
-* 不破坏 mpv 原有的功能，所有扩展功能都是绑定的快捷键。
+* 不破坏 mpv 原有的功能，所有扩展功能都是通过快捷键绑定。
 * 此配置针对 Windows 平台，如需在其它平台使用，可能需要更改部分代码。
 
 ## 安装
 
->Release 只针对多个环境有更新时才发布，不包含 portable_config
+>Release 只针对多个环境有更新时才发布，不包含 portable_config，需自行下载配置。
 
 * 从 Release 中下载最新版本解压缩，并进入解压后的根目录。
 
@@ -104,7 +104,7 @@ alt+9					附加 FSRCNNX_16
 ### 插帧快捷键
 
 ````
-alt+backspace			清除所有滤镜
+alt+backspace				清除所有滤镜
 
 ctrl+q					插帧 自动模式
 ctrl+w					插帧 2x
@@ -114,18 +114,18 @@ ctrl+r					插帧 显示器刷新率
 
 ## 注意事项
 
-* 渲染的显卡默认为 NVIDIA 显卡。如果本机没有NVIDIA显卡，请注释或更改
+* 渲染的显卡默认为 NVIDIA 显卡，如果本机没有NVIDIA显卡，需要注释或修改。
   * mpv.conf
-  * d3d11-adapter=NVIDIA
-* 如果使用核显渲染，可考虑取消内置的高画质配置，请注释或更改
+    * d3d11-adapter=NVIDIA
+* 如果使用核显渲染，可考虑禁用内置的HQ渲染提高性能，需要注释或修改。
   * mpv.conf
-  * profile=high-quality
-* 如果使用插帧功能，硬件加速需要copy模式，也可使用ctrl+h切换
+    * profile=high-quality
+* 如果使用插帧功能，硬件加速需要copy模式，也可使用ctrl+h切换，需要注释或修改。
   * mpv.conf
-  * hwdec=nvdec-copy,auto-copy-safe
-* 如果需要全局使用命令行，应该把程序目录添加到系统环境变量
-* 如果本机有python环境，若把路径添加到环境变量，可能会导致环境异常，需要按图解决
-  * 设置后，只有 VapourSynth 会使用 mpv 包内的 python 版本，而全局 python 依然是自己的版本
+    * hwdec=nvdec-copy,auto-copy-safe
+* 如果需要全局使用命令行播放，应该把程序目录添加到系统环境变量。
+* 如果本机有python环境，若把路径添加到环境变量，可能会导致环境异常，需要按图解决。
+  * 设置后，只有 VapourSynth 会使用包内的 python 版本，而全局 python 依然是自己的版本。
 
 
 <img src="docs/screenshot_01.png" alt="img" style="zoom:50%;" />
